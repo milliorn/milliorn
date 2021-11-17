@@ -1,5 +1,2 @@
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=milliorn&count_private=true&theme-nord")
-
-<a href="https://github-readme-stats.vercel.app">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=nord" />
-</a>
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=milliorn&count_private=true&theme=nord")
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=milliorn&layout=compact&langs_count=10&theme=nord)](https://github.com/anuraghazra/github-readme-stats)
