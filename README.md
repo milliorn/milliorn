@@ -1,2 +1,6 @@
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=milliorn&layout=compact&langs_count=8&theme=nord&hide=,nwscript)](https://github.com/anuraghazra/github-readme-stats)
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=milliorn&theme=nord&show_icons=true&hide_rank=true)
+<div >
+  <a href="https://github.com/milliorn">
+    <img height="180em" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=milliorn&layout=compact&langs_count=8&theme=nord&hide=,nwscript"/>
+    <img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=milliorn&&show_icons=true&theme=nord&include_all_commits=true"/>
+  </a>
+</div>  
