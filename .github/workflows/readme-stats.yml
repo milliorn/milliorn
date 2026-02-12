@@ -2,7 +2,7 @@ name: Generate README stats cards
 
 on:
   schedule:
-    - cron: "0 0 * * *" # runs daily (UTC) at midnight
+    - cron: "0 9 * * *" # daily (UTC)
   workflow_dispatch:
 
 permissions:
@@ -15,14 +15,27 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Generate GitHub Readme Stats
+      - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v1.1.0
         with:
           token: ${{ secrets.GH_README_STATS_TOKEN }}
-          username: milliorn
-          stats_svg: assets/github-stats.svg
-          top_langs_svg: assets/top-langs.svg
-          theme: transparent
-          top_langs_layout: compact
-          top_langs_count: 10
-          card_width: 420
+          card: stats
+          path: assets/github-stats.svg
+          options: >
+            username=milliorn
+            theme=transparent
+            hide_rank=true
+            card_width=420
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v1.1.0
+        with:
+          token: ${{ secrets.GH_README_STATS_TOKEN }}
+          card: top-langs
+          path: assets/top-langs.svg
+          options: >
+            username=milliorn
+            layout=compact
+            langs_count=10
+            theme=transparent
+            card_width=420
