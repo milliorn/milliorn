@@ -1,9 +1,12 @@
 name: Generate README stats cards
 
 on:
-  schedule:
-    - cron: "0 9 * * *" # daily (UTC)
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - ".github/workflows/readme-stats.yml"
 
 permissions:
   contents: write
