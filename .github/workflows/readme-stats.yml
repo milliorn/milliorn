@@ -1,0 +1,28 @@
+name: Generate README stats cards
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # runs daily (UTC) at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub Readme Stats
+        uses: stats-organization/github-readme-stats-action@v1.1.0
+        with:
+          token: ${{ secrets.GH_README_STATS_TOKEN }}
+          username: milliorn
+          stats_svg: assets/github-stats.svg
+          top_langs_svg: assets/top-langs.svg
+          theme: transparent
+          top_langs_layout: compact
+          top_langs_count: 10
+          card_width: 420
