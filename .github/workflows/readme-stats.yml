@@ -21,11 +21,7 @@ jobs:
           token: ${{ secrets.GH_README_STATS_TOKEN }}
           card: stats
           path: assets/github-stats.svg
-          options: >
-            username=milliorn
-            theme=transparent
-            hide_rank=true
-            card_width=420
+          options: "username=milliorn&theme=transparent&hide_rank=true&card_width=420"
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v1.1.0
@@ -33,9 +29,20 @@ jobs:
           token: ${{ secrets.GH_README_STATS_TOKEN }}
           card: top-langs
           path: assets/top-langs.svg
-          options: >
-            username=milliorn
-            layout=compact
-            langs_count=10
-            theme=transparent
-            card_width=420
+          options: "username=milliorn&layout=compact&langs_count=10&theme=transparent&card_width=420"
+
+      - name: Commit and push updated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p assets
+          git add assets/*.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(readme): update stats cards"
+          git push
